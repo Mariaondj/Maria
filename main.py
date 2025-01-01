@@ -13,6 +13,7 @@ import ctypes
 import os
 import json
 import signal
+import math
 import glob
 
 # Constants for Mouse Input
