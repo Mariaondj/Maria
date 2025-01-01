@@ -4,9 +4,9 @@ import threading
 import math
 from ultralytics import YOLO
 import bettercam
-from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QPainter, QPen
 from PyQt5.QtWidgets import QApplication, QMainWindow
+from PyQt5.QtCore import Qt  # Import QtCore for access to Qt enums
+from PyQt5.QtGui import QPainter, QPen
 import os
 
 # Constants for Mouse Input
