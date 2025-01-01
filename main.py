@@ -17,15 +17,14 @@ import glob
 import math
 
 # Constants for Mouse Input
-PUL = ctypes.POINTER(ctypes.c_ulong)
-
 class MouseInput(ctypes.Structure):
     _fields_ = [("dx", ctypes.c_long),
                 ("dy", ctypes.c_long),
                 ("mouseData", ctypes.c_ulong),
                 ("dwFlags", ctypes.c_ulong),
                 ("time", ctypes.c_ulong),
-                ("dwExtraInfo", PUL)]
+                ("dwExtraInfo", ctypes.POINTER(ctypes.c_ulong))]
+
 
 class Input_I(ctypes.Union):
     _fields_ = [("mi", MouseInput)]
@@ -76,9 +75,9 @@ class Gui():
     # GUI Initialization
     def initwindow(self):
         dpg.create_context()
-        dpg.create_viewport(title="Astro AI | Version 1.0", width=500, height=300)
+        dpg.create_viewport(title="Cloak AI | Version 1.9", width=500, height=300)
         dpg.setup_dearpygui()
-        with dpg.window(label="Astro", width=800, height=600, tag="MainWindow"):
+        with dpg.window(label="CloakAI", width=800, height=600, tag="MainWindow"):
             with dpg.tab_bar():
                 with dpg.tab(label="Softaim"):
                     self.softaim_checkbox = dpg.add_checkbox(label="Toggle Softaim", callback=self.togglesoftaim, default_value=softaim)
