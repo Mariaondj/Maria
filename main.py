@@ -4,7 +4,9 @@ import threading
 import math
 from ultralytics import YOLO
 import bettercam
-from PyQt5.QtWidgets import QApplication
+from PyQt5.QtCore import Qt
+from PyQt5.QtGui import QPainter, QPen
+from PyQt5.QtWidgets import QApplication, QMainWindow
 import os
 
 # Constants for Mouse Input
